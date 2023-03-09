@@ -1,6 +1,7 @@
 To start the application you need to run:
 
 **npm install**
+
 **npm run dev**
 
 This is a simple movie search application.
