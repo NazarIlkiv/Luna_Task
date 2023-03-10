@@ -18,24 +18,24 @@ interface SearchResponse {
   Response: string;
 }
 
-interface Props {
-  filmsData: Movie[];
-}
+// interface Props {
+//   filmsData: Movie[];
+// }
 
-export const getServerSideProps: GetServerSideProps<Props> = async (
-  context
-) => {
-  const response = await fetch(
-    `https://www.omdbapi.com/?s=avengers&apikey=e0c87a5f`
-  );
-  const searchResponse: SearchResponse = await response.json();
-  const filmsData = searchResponse.Search || [];
-  return {
-    props: { filmsData },
-  };
-};
+// export const getServerSideProps: GetServerSideProps<Props> = async (
+//   context
+// ) => {
+//   const response = await fetch(
+//     `https://www.omdbapi.com/?s=avengers&apikey=e0c87a5f`
+//   );
+//   const searchResponse: SearchResponse = await response.json();
+//   const filmsData = searchResponse.Search || [];
+//   return {
+//     props: { filmsData },
+//   };
+// };
 
-function Homepage({ filmsData }: Props) {
+function Homepage() {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [favourites, setFavourites] = useState<Movie[]>([]);
   const [searchValue, setSearchValue] = useState<string>("avengers");
